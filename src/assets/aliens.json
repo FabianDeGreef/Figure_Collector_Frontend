@@ -1,0 +1,27 @@
+ [
+
+    {
+        "issue":"Issue #11",
+        "name": "AVP Requiem Predalien",
+        "description": "First appearing in its early chestburster form in 2004’s Alien vs. Predator, the Predalien is the terrifying result of a facehugger impregnating a Predator.",
+        "price":"19.99",
+        "height":"15.6",
+        "editionType":"Regular",
+        "collected":"true",
+        "imageUrl":"assets/images/AVP_Requiem_Predalien.jpg"
+    },
+    {
+        "issue":"Issue #7",
+        "name": "Alien Warrior",
+        "description": "The Xenomorph’s attack force – presenting the Alien Warrior Figurine! This Alien Xenomorph Warrior figure is inspired by the xenomorph ambush on the Colonial Marines as they unknowingly enter an alien hive.",
+        "price":"19.99",
+        "height":"13",
+        "editionType":"Regular",
+        "collected":"true",
+        "imageUrl":"assets/images/Alien_Warrior.jpg"
+    }
+    
+
+ ]
+ 
+

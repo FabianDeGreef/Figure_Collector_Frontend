@@ -1,0 +1,103 @@
+<div class="card">
+  <div class="card-header" *ngIf="figure">
+    {{figure.name}}
+  </div>
+
+  <div class="card-body" *ngIf="figure">
+
+    <div class="row">
+      <div class="col-md-8">
+        <div class="row">
+          <div class="col-md-3">Issue:</div>
+          <div class="col-md-6">{{figure.issue}}</div>
+        </div>
+        <div class="row">
+          <div class="col-md-3">Name:</div>
+          <div class="col-md-6">{{figure.name}}</div>
+        </div>
+        <div class="row">
+          <div class="col-md-3">Height:</div>
+          <div class="col-md-6">{{figure.height}}</div>
+        </div>
+        <div class="row">
+          <div class="col-md-3">Price:</div>
+          <div class="col-md-6">{{figure.price | currency}}</div>
+        </div>
+        <div class="row">
+          <div class="col-md-3">Description:</div>
+          <div class="col-md-9">{{figure.description}}</div>
+        </div>
+        <div class="row">
+          <div class="col-md-3">Edition Type:</div>
+          <div class="col-md-6">{{figure.edition}}</div>
+        </div>
+        <div class="row">
+          <div class="col-md-3">Collected:</div>
+          <div class="col-md-4">{{figure.collected}}</div>
+        </div>
+      </div>
+      <div class="col-md-1" *ngIf="figure.imageUrl">
+        <img class="center-block img-responsive" [style.height.px]="200" [src]="figure.imageUrl" [title]="figure.name">
+      </div>
+    </div>
+    <div class="card-footer">
+      <div class="col">
+        <div class="col-md-1">
+          <button class="btn btn-outline-primary buttonExtra" [routerLink]="['/editFigure',this.figure._id]"
+            (click)="edit()">Edit</button>
+        </div>
+        <div class="col-md-1">
+          <button class="btn btn-outline-danger buttonExtra" (click)="remove()">Remove</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- <div class="col-md-6 col-md-6 col-md-6 col-sm-6 col-12">
+    <div class="card">
+        <div class="card-img-top"
+        *ngIf="alien.imageUrl">
+     <img class="center-block"
+          [style.height.px]="250"
+          [src]="alien.imageUrl"
+          [title]="alien.name">
+   </div>
+
+      <div class="card-body">
+        <div class="row">
+  
+          <div class="col">
+            <div class="row">
+              <div class="col-md-3">Issue:</div>
+              <div class="col-md-4">{{alien.issue}}</div>
+            </div>
+            <div class="row">
+              <div class="col-md-3">Name:</div>
+              <div class="col-md-4">{{alien.name}}</div>
+            </div>
+            <div class="row">
+              <div class="col-md-3">Height:</div>
+              <div class="col-md-4">{{alien.height}}</div>
+            </div>
+            <div class="row">
+              <div class="col-md-3">Price:</div>
+              <div class="col-md-4">{{alien.price | currency}}</div>
+            </div>
+            <div class="row">
+              <div class="col-md-3">Description:</div>
+              <div class="col-md-4">{{alien.description}}</div>
+            </div>
+            <div class="row">
+              <div class="col-md-3">Edition Type:</div>
+              <div class="col-md-4">{{alien.edition}}</div>
+            </div>
+            <div class="row">
+              <div class="col-md-3">Collected:</div>
+              <div class="col-md-4">{{alien.collected}}</div>
+            </div>
+          </div>      
+        </div>
+    </div>
+  </div>
+ -->

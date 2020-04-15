@@ -1,0 +1,77 @@
+<div class="container cardSpacing">
+    <div class="card">
+        <div class="card card-header">
+            <h5>Edit Figure</h5>
+        </div>
+        <div class="card card-body">
+            <div class="row">
+                <form   class="row" [formGroup]="editfigureForm" (ngSubmit)="onSubmit()">
+
+                    <div class="col-md-2 form-group">
+                        <label for="issue">Issue:</label>
+                        <input class="form-control" type="text" name="issue" id="issue" formControlName="issue" />
+                    </div>
+            
+                    <div class="col-md-6 form-group">
+                        <label for="name">Name:</label>
+                        <input class="form-control" type="text" name="name" id="name" formControlName="name" />
+                    </div>
+            
+               
+                        <div class="col-md-2 form-group">
+                            <label for="height">Height:</label>
+                            <input class="form-control" [value]="editfigureForm.get('height').value" type="text" name="height" id="height" formControlName="height" />
+                        </div>
+            
+                        <div class="col-md-2 form-group">
+                            <label for="price">price:</label>
+                            <input class="form-control" type="text" name="price" id="price" [value]="editfigureForm.get('price').value" formControlName="price" />
+                        </div>
+                 
+            
+                    <div class="col-md-6 form-group">
+                        <label for="description">Description:</label>
+                        <textarea class="form-control" formControlName="description" id="description" rows="3"></textarea>
+                    </div>
+            
+                    <div class="col-md-6 form-group ">
+                        <label for="edition">Edition Type</label>
+                        <select  id="edition" formControlName="edition"class="form-control">
+                            <option *ngFor="let edition of editionList" [ngValue]="edition">{{edition}}</option>
+                        </select>
+                    </div>
+            
+                    <div class="col-md-6 form-group">
+                        <div class="input-group">
+                            <div class="input-group-prepend">
+                                <span class="input-group-text" id="addImage">Upload</span>
+                            </div>
+                            <div class="custom-file">
+                                <input (change)="onSelectFile($event)" type="file" class="custom-file-input" id="addImage" aria-describedby="addImage">
+                                <label class="custom-file-label" for="addImage">Choose file</label>
+                            </div>
+                        </div>
+                    </div>
+            
+                    <div class="col-md-5 form-group">
+                        <div class="form-check" >
+                            <input class="form-check-input" formControlName="collected" type="checkbox" id="collected">
+                            <label class="form-check-label" for="collected">
+                                In collection
+                            </label>
+                        </div>
+                    </div>
+        
+                    <div class=" col-md-5 form-group">
+                        <input class="btn btn-primary" [disabled]="!editfigureForm.valid" type="submit" value="Opslaan" name="add" />
+                    </div>
+                </form>
+            </div>
+            <div class="row">
+                <div class="row col-md-5 food1" *ngIf="image!=undefined">
+                    <img [src]="image">
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
